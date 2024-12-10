@@ -9,9 +9,9 @@ use App\Services\ProductionService;
 
 class ProductionController extends Controller
 {
-    public function requestMaterials(Request $request)
+    public function production(Request $request)
     {
-        $getProduction = new ProductionService($request);
+        $getProduction = (new ProductionService)->getProduction($request);
         return $this->sendResponse($getProduction);
     }
 }

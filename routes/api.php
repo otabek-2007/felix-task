@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/request-materials', [ProductionController::class, 'requestMaterials']);
+Route::get('/get-production', [ProductionController::class, 'production']);
