@@ -9,14 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('warehouses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('material_id')->constrained('materials')->onDelete('cascade');
+            $table->integer('remainder'); // Qolgan miqdor
+            $table->decimal('price', 10, 2); // Narx
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      */
